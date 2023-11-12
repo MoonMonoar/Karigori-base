@@ -1,0 +1,26 @@
+<!-- src/main/resources/templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Search Results</title>
+</head>
+<body>
+<h2>Job Search Results</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Position</th>
+        <th>Location</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="job : ${jobs}">
+        <td th:text="${job.position}"></td>
+        <td th:text="${job.location}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

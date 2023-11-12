@@ -1,0 +1,31 @@
+<!-- src/main/resources/templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Search</title>
+</head>
+<body>
+<h2>Job Search</h2>
+<form action="/search" method="post" th:object="${job}">
+    <label for="position">Position:</label>
+    <select id="position" name="position" th:field="*{position}">
+        <!-- Add options dynamically from the database or predefined values -->
+        <option value="Software Developer">Software Developer</option>
+        <option value="Data Analyst">Data Analyst</option>
+        <!-- Add more positions as needed -->
+    </select>
+
+    <label for="location">Location:</label>
+    <select id="location" name="location" th:field="*{location}">
+        <!-- Add options dynamically from the database or predefined values -->
+        <option value="City1">City1</option>
+        <option value="City2">City2</option>
+        <!-- Add more locations as needed -->
+    </select>
+
+    <button type="submit">Search</button>
+</form>
+</body>
+</html>
